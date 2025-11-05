@@ -8,6 +8,8 @@
 -- (Este script debe ser ejecutado por un usuario con privilegios de DBA, como SYSTEM)
 
 -- Creación de un nuevo tablespace (opcional pero recomendado)
+alter session set "_oracle_script"=true;
+
 CREATE TABLESPACE cinepolis_ts
 DATAFILE 'cinepolis_ts.dbf'
 SIZE 50M
@@ -28,5 +30,6 @@ GRANT CONNECT, RESOURCE, CREATE VIEW, CREATE TRIGGER,
 --usa set SERVEROUTPUT on;
 -- Conexión como el nuevo usuario para verificar
 CONNECT cinepolis_user/tu_contraseña_segura;
+
 
 -- Fin del script de instalación de usuario y permisos
